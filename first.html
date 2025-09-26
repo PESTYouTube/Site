@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS.css">
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="логотип_без_фона.png" alt="123" width="150">
+            <span>Byteletics</span>
+        </div>
+        <div class="header-item"></div>
+    </header>
+
+    <section id="home" class="content-section active">
+        <div class="container">
+            <div class="page">
+                <h1>Главная</h1>
+                <p id="skill">Спорт является неотъемлемой частью нашей жизни, данный сайт поможет вам узнать о самых популярных видах спорта</p>
+            </div>
+        </div>
+        
+        <div class="maket-page">
+            <div class="member-cards" data-target="Footboll">
+                <div class="member-photo">
+                    <img src="https://avatars.mds.yandex.net/i?id=f1006c9dea9a59f8b4f46106b442b40feed6ba78-6301299-images-thumbs&n=13" 
+                         class="nav-img" 
+                         data-target="Basketboll" 
+                         alt="Футбол" 
+                         width="300">
+                    <div class="text-card">
+                        <h2>Футбол</h2>
+                        <span>Самый популярный вид спорта на данный момент</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="member-card1">
+                <div class="member-photo1">
+                    <img src="./ce30b59c90a9093944611f274c7a8503.jpg" 
+                         class="nav-img" 
+                         alt="Крикет" 
+                         width="300">
+                    <div class="text-card1">
+                        <h2>Крикет</h2>
+                        <span>Самый популярный вид спорта в Азии</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="member-card2">
+                <div class="member-photo2">
+                    <img src="./ab54eb385e5bcad379e17909841adf8f.jpg" 
+                         class="nav-img" 
+                         alt="Баскетбол" 
+                         width="300">
+                    <div class="text-card2">
+                        <h2>Баскетбол</h2>
+                        <span>Самый популярный вид спорта в Америке</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section id="Footboll" class="content-section">
+<h2></h2>
+    <section>
+        <!-- Дополнительные секции будут здесь -->
+    </section>
+
+    <script>
+        // Находим все картинки для навигации
+        const navImages = document.querySelectorAll('.nav-img');
+
+        // Для каждой картинки добавляем обработчик клика
+        navImages.forEach(img => {
+            img.addEventListener('click', function() {
+                // 1. Убираем класс 'active' у ВСЕХ разделов
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                // 2. Находим ID целевого раздела из атрибута data-target
+                const targetSectionId = this.getAttribute('data-target');
+
+                // 3. Добавляем класс 'active' целевому разделу, чтобы он появился
+                document.getElementById(targetSectionId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
